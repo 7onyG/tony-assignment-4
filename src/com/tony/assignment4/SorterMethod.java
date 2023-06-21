@@ -80,47 +80,6 @@ public class SorterMethod implements Comparable<Student>{
         
     }
 
-//    private static Student[] groupStudentsByCourse (Student[] students) {
-//        Student[] studentsByCourse = new Student[100]
-
-//        for (Student student : students) {
-//            String course = student.getCourse();
-//           Student[] courseStudents = studentsByCourse.getOrDefault(course, new ArrayList<>());
-//            courseStudents.add(student);
-//            studentsByCourse.put(course, courseStudents);
-//        }
-//
-//        return studentsByCourse;
-//    }
-
-//    private static void writeStudentsToCSV(Map<String, List<Student>> studentsByCourse) {
-//    	
-//    	Student student = new Student();
-//    	
-//        for (String course : studentsByCourse.keySet()) {
-//            Student[]students = studentsByCourse.get(course);
-//
-//            // Sort students by grade in descending order
-////            students.sort(Comparator.comparingInt(Student::getGrade).reversed());
-//            
-//
-//            // Create the output CSV file for the current course
-//            String outputFilename = "course" + student.getStudentID() + ".csv";
-//
-//            try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilename))) {
-//                // Write the header line
-//                writer.write("Student Name,Grade\n");
-//
-//                // Write the sorted students to the CSV file
-//                for (Student stu : students) {
-//                    writer.write(stu.getStudentName() + "," + stu.getGrade() + "\n");
-//                }
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
-
 	
 
 	@Override
