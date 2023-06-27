@@ -1,12 +1,15 @@
 package com.tony.assignment4;
 
-public class Student implements Comparable<Student> {
+import java.util.Comparator;
+
+public class Student implements Comparator<Student> {
 	
 	    private String studentName;
-	    public String course;
-	    private String grade;
-	    private int studentID;
-	    public int getStudentID()
+	    private String course;
+	    private Integer grade;
+	    private Integer studentID;
+	    public Integer getStudentID()
+	    
 	    {
 			return studentID;
 		}
@@ -21,7 +24,7 @@ public class Student implements Comparable<Student> {
 
 		
 		
-	    public Student(int studentID, String studentName, String course, String grade) {
+	    public Student(Integer studentID, String studentName, String course, Integer grade) {
 	    	this.studentID = studentID;
 	        this.studentName = studentName;
 	        this.course = course;
@@ -42,15 +45,27 @@ public class Student implements Comparable<Student> {
 	        return course;
 	    }
 
-	    public String getGrade() {
+	    public Integer getGrade() {
 	        return grade;
 	    }
 
+
 		@Override
-		public int compareTo(Student that) {
-			// TODO Auto-generated method stub
-			return that.grade.compareTo(this.grade);
+		public int compare(Student o1, Student o2) {
 			
+			if (o1.grade == o2.grade) {
+				
+				return 0;
+				
+			} else if(o1.grade > o2.grade) {
+				
+				return -1;
+				
+			} else {
+				
+				return 1;
+				
+			}
 			
 		}
 	}
