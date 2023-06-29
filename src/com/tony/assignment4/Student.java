@@ -1,8 +1,6 @@
 package com.tony.assignment4;
 
-import java.util.Comparator;
-
-public class Student implements Comparator<Student> {
+public class Student implements Comparable<Student> {
 	
 	    private String studentName;
 	    private String course;
@@ -50,23 +48,12 @@ public class Student implements Comparator<Student> {
 	    }
 
 
+			
+		
+
 		@Override
-		public int compare(Student o1, Student o2) {
-			
-			if (o1.grade == o2.grade) {
-				
-				return 0;
-				
-			} else if(o1.grade > o2.grade) {
-				
-				return -1;
-				
-			} else {
-				
-				return 1;
-				
-			}
-			
+		public int compareTo(Student o) {
+			return this.grade.compareTo(o.grade);
 		}
 	}
 

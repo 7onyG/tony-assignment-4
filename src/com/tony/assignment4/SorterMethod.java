@@ -35,7 +35,7 @@ public class SorterMethod {
                 
             }
             
-            Arrays.sort(students);
+//            Arrays.sort(students);
             
           
             
