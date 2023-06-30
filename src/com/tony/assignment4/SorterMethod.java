@@ -1,7 +1,7 @@
 package com.tony.assignment4;
 
 import java.io.*;
-import java.util.*;
+
 
 public class SorterMethod {
 	
@@ -19,6 +19,7 @@ public class SorterMethod {
             	
                 String[] fields = line.split(",");
 
+
                
                     Integer studentID = Integer.parseInt(fields[0]);
                     String studentName = fields[1];
@@ -31,9 +32,9 @@ public class SorterMethod {
                     students[i] = student;
                     i++;
                    
+            }
                                        
                 
-            }
             
 //            Arrays.sort(students);
             

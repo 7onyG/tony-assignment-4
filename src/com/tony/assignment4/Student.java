@@ -6,11 +6,7 @@ public class Student implements Comparable<Student> {
 	    private String course;
 	    private Integer grade;
 	    private Integer studentID;
-	    public Integer getStudentID()
-	    
-	    {
-			return studentID;
-		}
+	   
 	    
 	    public Student() {
 	    	
@@ -46,14 +42,14 @@ public class Student implements Comparable<Student> {
 	    public Integer getGrade() {
 	        return grade;
 	    }
-
-
-			
+	    public Integer getStudentID() {
+	    	return studentID;
+	    }
 		
 
 		@Override
-		public int compareTo(Student o) {
-			return this.grade.compareTo(o.grade);
+		public int compareTo(Student that) {
+			return this.grade.compareTo(that.grade);
 		}
 	}
 

@@ -8,15 +8,14 @@ public class Assignment4App {
     	
     FileService fileService = new FileService();	
     	
+
     	
         String inputFile = "student-master-list.csv";
-        SorterMethod sorterMethod = new SorterMethod();
         // Read the student data from the input CSV file
-        Student[] students = sorterMethod.readStudentData(inputFile);
+        Student[] students = fileService.readStudentData(inputFile);
         System.out.println(Arrays.toString(students));
         
         fileService.writeToFile(students, inputFile);
-        
 
     }
 }
