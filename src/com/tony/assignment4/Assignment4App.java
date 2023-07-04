@@ -15,7 +15,7 @@ public class Assignment4App {
         Student[] students = fileService.readStudentData(inputFile);
         System.out.println(Arrays.toString(students));
         
-        fileService.writeToFile(students, inputFile);
+//        fileService.writeToFile(students, inputFile);
 
     }
 }
