@@ -1,6 +1,7 @@
 package com.tony.assignment4;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -50,21 +51,36 @@ public class FileService {
 
 	        return students;
 	        
-	 
-	    
 	        
-	    }
+	 
+	}  
+	        
+	    
 
 	
 
-	public void writeToFile(Student[] students, String searchQuery) throws IOException {
+	public void writeToFile(String searchQuery,  String inputFile, String outputFile) throws IOException {
 		
-		FileWriter writer = new FileWriter(searchQuery);
+		  try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+		             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+
+		            String line;
+		            while ((line = reader.readLine()) != null) {
+		                if (line.contains(searchQuery)) {
+		                    writer.write(line);
+		                    writer.newLine();
+		                }
+		            }
+		        } catch (IOException e) {
+		            e.printStackTrace();
+		        }
 		
-		writer.write("Student ID, Student Name, Course,  Grade \n");
-		
+		  
+
+		    }
+
 		
 		
 	}
-}
+
 		

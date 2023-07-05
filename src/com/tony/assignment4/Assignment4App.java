@@ -8,16 +8,20 @@ public class Assignment4App {
     	
     FileService fileService = new FileService();	
     	
+    String searchQuery = "COMPSCI";
+    String inputFile = "student-master-list.csv";
+    String outputFile = "course1.txt";
+
+    fileService.writeToFile(searchQuery, inputFile, outputFile);
 
     	
-        String inputFile = "student-master-list.csv";
         // Read the student data from the input CSV file
         Student[] students = fileService.readStudentData(inputFile);
         System.out.println(Arrays.toString(students));
         
-//        fileService.writeToFile(students, inputFile);
 
     }
+
 }
 
 
