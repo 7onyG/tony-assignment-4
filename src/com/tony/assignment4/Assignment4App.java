@@ -10,19 +10,19 @@ public class Assignment4App {
     	
     String searchQuery = "COMPSCI";
     String inputFile = "student-master-list.csv";
-    String outputFile = "course1.txt";
+    String outputFile = "course1.csv";
 
     fileService.writeToFile(searchQuery, inputFile, outputFile);
     
     String searchQuery1 = "APMTH";
     String inputFile1 = "student-master-list.csv";
-    String outputFile1 = "course2.txt";
+    String outputFile1 = "course2.csv";
 
     fileService.writeToFile(searchQuery1, inputFile1, outputFile1);
     
     String searchQuery2 = "STAT";
     String inputFile2 = "student-master-list.csv";
-    String outputFile2 = "course3.txt";
+    String outputFile2 = "course3.csv";
 
     fileService.writeToFile(searchQuery2, inputFile2, outputFile2);
     
