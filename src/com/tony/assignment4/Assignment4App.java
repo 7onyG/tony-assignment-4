@@ -7,39 +7,28 @@ public class Assignment4App {
     public static void main(String[] args) throws IOException {
     	
     FileService fileService = new FileService();	
-    	
-    String searchQuery = "COMPSCI";
+        	
     String inputFile = "student-master-list.csv";
+    String searchQuery = "COMPSCI";  
     String outputFile = "course1.csv";
+    Student[] students = new Student[100];
+ 	students = fileService.readStudentData(inputFile);
 
-    fileService.writeToFile(searchQuery, inputFile, outputFile);
+    fileService.writeToFile(searchQuery, outputFile, students);
     
     String searchQuery1 = "APMTH";
-    String inputFile1 = "student-master-list.csv";
     String outputFile1 = "course2.csv";
 
-    fileService.writeToFile(searchQuery1, inputFile1, outputFile1);
+    fileService.writeToFile(searchQuery1, outputFile1, students);
     
     String searchQuery2 = "STAT";
-    String inputFile2 = "student-master-list.csv";
     String outputFile2 = "course3.csv";
 
-    fileService.writeToFile(searchQuery2, inputFile2, outputFile2);
-    
-    //Please be patient
-    //Might need to run app a couple times
-
-    	
-        Student[] students = fileService.readStudentData(inputFile);
+    fileService.writeToFile(searchQuery2, outputFile2, students);   
         System.out.println(Arrays.toString(students));
         
-        //Making sure it works
-        
-
     }
-
 }
-
 
 
     

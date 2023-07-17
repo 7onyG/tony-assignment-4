@@ -27,8 +27,8 @@ public class Student implements Comparable<Student> {
 
 	    @Override
 		public String toString() {
-			return "Student [studentName=" + studentName + ", course=" + course + ", studentID=" + studentID
-					+ ", grade=" + grade + "]";
+			return "Student [Name = " + studentName + ", Course = " + course + ", ID = " + studentID
+					+ ", Grade = " + grade + "]";
 		}
 
 		public String getStudentName() {
@@ -49,8 +49,9 @@ public class Student implements Comparable<Student> {
 
 		@Override
 		public int compareTo(Student that) {
-			return that.grade.compareTo(this.grade);
-		}
+			
+				 return that.grade.compareTo(this.grade);
+				 
 	}
 
-
+}

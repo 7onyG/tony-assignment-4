@@ -7,24 +7,20 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 
+
 public class FileService {
 	
 	public Student[] readStudentData(String inputFile) {
 	    Student[] students = new Student[100];
 
-
-	        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
+	        try (BufferedReader reader = new BufferedReader(new FileReader("student-master-list.csv"))) {
 	            String line;
-	            // Skip the header line
+	
 	            reader.readLine();
-	            
-	            int i = 0;
-	            
+	            int i = 0;       	  
 	            while ((line = reader.readLine()) != null) {
 	            	
 	                String[] fields = line.split(",");
-
-
 	               
 	                    Integer studentID = Integer.parseInt(fields[0]);
 	                    String studentName = fields[1];
@@ -33,54 +29,40 @@ public class FileService {
 	                     
 
 	                    Student student = new Student(studentID, studentName, course, grade);
-	                    
+	               
 	                    students[i] = student;
 	                    i++;
-	                   
-	            }
-	                                       
-	                
+	                    
+	                 
+	            }                       
+	           
 	            Arrays.sort(students);
-
-	          
 	            
 	            
 	        } catch (IOException e) {
 	            e.printStackTrace();
-	        }
-
-	        return students;
+	        } 
 	        
+	        return students;	        	        
 	        
-	 
 	}  
-	        
-	    
-
-	
-
-	public void writeToFile(String searchQuery,  String inputFile, String outputFile) throws IOException {
+	        	    
+	public void writeToFile(String searchQuery, String outputFile, Student[] students) throws IOException {
 		
-		  try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-		             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
-
-		            String line;
-		            while ((line = reader.readLine()) != null) {
-		                if (line.contains(searchQuery)) {
-		                    writer.write(line);
-		                    writer.newLine();
-		                }
-		            }
-		        } catch (IOException e) {
-		            e.printStackTrace();
-		        }
+		try(FileWriter writer = new FileWriter(outputFile)) {
+			writer.write("Student ID,Student Name,Course,Grade \n");
+			for (int i = 0; i < students.length; i++) {
+				//System.out.println(searchQuery.contains(students[i].getCourse()));
+				if (students[i].getCourse().contains(searchQuery)) {
+				writer.write
+				(students[i].getStudentID() + "," + students[i].getStudentName() + "," + students[i].getCourse() + "," + students[i].getGrade() + "\n");
+				}
+			} 
 		
-		  
-
-		    }
-
-		
+		}
 		
 	}
+}
+	
 
 		
