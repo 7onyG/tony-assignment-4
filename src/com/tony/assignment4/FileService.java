@@ -52,7 +52,6 @@ public class FileService {
 		try(FileWriter writer = new FileWriter(outputFile)) {
 			writer.write("Student ID,Student Name,Course,Grade \n");
 			for (int i = 0; i < students.length; i++) {
-				//System.out.println(searchQuery.contains(students[i].getCourse()));
 				if (students[i].getCourse().contains(searchQuery)) {
 				writer.write
 				(students[i].getStudentID() + "," + students[i].getStudentName() + "," + students[i].getCourse() + "," + students[i].getGrade() + "\n");
